@@ -1,7 +1,8 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
+import "../style.css"
 
-var renderer, scene, camera, composer, circle, circleWithFrim, skelet, particle,dotnetMesh;
+var renderer, scene, camera, composer, circle, circleWithFrim, skelet, particle, dotnetMesh;
 var controls;
 window.onload = function () {
     init();
