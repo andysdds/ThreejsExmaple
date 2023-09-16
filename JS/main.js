@@ -1,5 +1,7 @@
-var renderer, scene, camera, composer, circle, circleWithFrim, skelet, particle,dotnetMesh;
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
+var renderer, scene, camera, composer, circle, circleWithFrim, skelet, particle,dotnetMesh;
+var controls;
 window.onload = function () {
     init();
     animate();
@@ -17,6 +19,9 @@ function init() {
     camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 1, 1000);
     camera.position.z = 300;
     scene.add(camera);
+    controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableZoom = false;
+    controls.enablePan = false;
 
     circle = new THREE.Object3D();
     skelet = new THREE.Object3D();
@@ -31,9 +36,9 @@ function init() {
     scene.add(dotnetMesh);
 
     var geometry = new THREE.TetrahedronGeometry(2, 0);
-    var geom = new THREE.IcosahedronGeometry(7, 1);
-    var geom2 = new THREE.IcosahedronGeometry(7, 1);
-    var dotnut = new THREE.RingGeometry(7, 8,64);
+    var geom = new THREE.IcosahedronGeometry(4, 1);
+    var geom2 = new THREE.IcosahedronGeometry(5, 1);
+    var dotnut = new THREE.TorusGeometry(12, 0.4, 24, 96);
 
     var material = new THREE.MeshPhongMaterial({
         color: 0xffffff,
@@ -122,6 +127,8 @@ function animate() {
     skelet.rotation.y += 0.0020;
     circleWithFrim.rotation.x += 0.0020;
     circleWithFrim.rotation.y += 0.0030;
+    dotnetMesh.rotation.y += 0.02;
+
     renderer.clear();
 
     for(var i = 0; i< particle.children.length; i++){
