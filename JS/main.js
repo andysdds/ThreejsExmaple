@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
 var renderer, scene, camera, composer, circle, circleWithFrim, skelet, particle,dotnetMesh;
 var controls;
 window.onload = function () {
