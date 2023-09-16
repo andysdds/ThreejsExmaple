@@ -1,6 +1,6 @@
 import * as THREE from 'https://unpkg.com/three@0.126.1/build/three.module.js';
 import { OrbitControls } from 'https://unpkg.com/three@0.126.1/examples/jsm/controls/OrbitControls.js';
-import "../style.css";
+import "/style.css";
 
 var renderer, scene, camera, composer, circle, circleWithFrim, skelet, particle, dotnetMesh;
 var controls;
@@ -14,7 +14,7 @@ function init() {
     renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1);
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.autoClear = false;
-    document.body.appendChild( renderer.domElement );
+    document.body.appendChild(renderer.domElement);
 
     scene = new THREE.Scene();
 
@@ -133,7 +133,7 @@ function animate() {
 
     renderer.clear();
 
-    for(var i = 0; i< particle.children.length; i++){
+    for (var i = 0; i < particle.children.length; i++) {
         particle.children[i].rotation.x += 0.001;
         particle.children[i].rotation.y += 0.001;
         particle.children[i].rotation.z += 0.001;
