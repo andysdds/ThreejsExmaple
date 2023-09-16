@@ -1,5 +1,3 @@
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
 var renderer, scene, camera, composer, circle, circleWithFrim, skelet, particle,dotnetMesh;
 var controls;
 window.onload = function () {
